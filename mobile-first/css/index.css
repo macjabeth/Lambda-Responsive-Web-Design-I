@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .container {
-  width: 880px;
+  width: 100%;
   margin: auto;
 }
 
@@ -73,18 +73,25 @@ h1, h2, h3, h4, h5 {
 header {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 header nav {
-  margin-top: 40px;
-  width: 610px;
+  margin-top: 20px;
+  width: 100%;
   justify-content: space-between;
   display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 header nav a {
   text-decoration: none;
   color: #b0b0b0;
+  padding: 15px;
+  width: 100%;
+  border-top: 1px solid;
 }
 
 header nav a:hover {
@@ -92,8 +99,13 @@ header nav a:hover {
   color: black;
 }
 
+header nav a:last-child {
+  border-bottom: 1px solid;
+}
+
 header .logo {
-  margin: 28px 0 0 91px;
+  margin: 28px 0 0 40px;
+  order: -1;
 }
 
 /* Call To Action (CTA) Styles */
@@ -101,7 +113,8 @@ header .logo {
 .cta {
   display: flex;
   margin-top: 72px;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-top: 42px;
 }
 
 .cta .cta-text {
@@ -112,7 +125,7 @@ header .logo {
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  margin: 0 82px 0 0;
+  margin: auto;
 }
 
 .cta .cta-text button {
@@ -130,12 +143,16 @@ header .logo {
   color: white;
 }
 
+.cta img {
+  display: none;
+}
+
 /* Main Content Styles */
 
 .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-  margin: 75px 0 35px 0;
+  margin: 75px 15px 35px 15px;
   padding: 35px 0;
   font-size: 16px;
   line-height: 18px;
@@ -145,9 +162,15 @@ header .logo {
   display: flex;
 }
 
+.main-content .top-content,
+.main-content .bottom-content {
+  flex-direction: column;
+}
+
 .main-content .middle-img {
   display: block;
   margin: 30px auto;
+  width: 100%;
 }
 
 .main-content .bottom-content {
@@ -156,6 +179,19 @@ header .logo {
 
 .main-content .bottom-content p {
   padding-right: 20px;
+}
+
+.text-content {
+  margin-bottom: 30px;
+}
+
+.top-content div:last-child,
+.bottom-content div:last-child {
+  margin-bottom: 0;
+}
+
+.contact {
+  padding: 0 15px;
 }
 
 /* Contact Styles */
@@ -173,90 +209,72 @@ footer {
 
 /* Tablet View */
 
-@media( max-width: 800px ) {
-  .container,
-  .middle-img {
-    width: 100%;
-  }
-
-  .container {
-    padding: 2vh 2vw;
-  }
-
-  header {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
+@media( min-width: 500px ) {
   header nav {
-    width: 90%;
-  }
-
-  header .logo {
-    margin-left: 40px;
-    order: -1;
-  }
-
-  .cta {
-    justify-content: center;
-  }
-
-  .cta .cta-text {
-    margin: auto;
-  }
-
-  .cta img {
-    display: none;
-  }
-}
-
-/* Mobile View */
-
-@media( max-width: 500px) {
-  .container {
-    padding: 0;
-  }
-
-  header nav {
-    width: 100%;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 20px;
+    flex-direction: row;
   }
 
   header nav a {
-    padding: 15px;
-    width: 100%;
-    border-top: 1px solid;
+    border-top: none;
   }
 
   header nav a:last-child {
-    border-bottom: 1px solid;
-  }
-
-  .cta {
-    margin-top: 42px;
+    border-bottom: none;
   }
 
   .main-content {
-    margin: 75px 15px 35px 15px;
+    padding-bottom: 0;
   }
 
   .main-content .top-content,
   .main-content .bottom-content {
-    flex-direction: column;
+    flex-direction: row;
+  }
+
+  .main-content .middle-img {
+    margin-top: 0;
+  }
+}
+
+@media( min-width: 800px ) {
+  .container {
+    max-width: 880px;
+  }
+
+  header {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  header nav {
+    width: auto;
+    flex: 1;
+    text-align: unset;
+  }
+
+  header nav a:first-child {
+    padding-left: 0;
+  }
+
+  header .logo {
+    margin-top: 15px;
+    order: 0;
+  }
+
+  header, .cta {
+    padding: 0 15px;
+  }
+
+  .cta {
+    margin-top: 72px;
+  }
+
+  .cta img {
+    display: block;
   }
 
   .text-content {
-    margin-bottom: 30px;
-  }
-
-  .top-content div:last-child,
-  .bottom-content div:last-child {
-    margin-bottom: 0;
-  }
-
-  .contact {
-    padding: 0 15px;
+    margin-right: 5px;
   }
 }
