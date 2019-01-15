@@ -17,5 +17,5 @@ It's time to expand our CSS skills into multiple devices.  You will be creating 
 
 ## Stretch Goals
 
-* [ ] Create a tablet and mobile version of the services page from previous projects
-* [ ] Once you have completed the project with max-width media queries, start over with min-width media queries to get a feel for how a mobile first approach would be like.  I recommend making a copy of all your contents in a new folder named "mobile-first" to keep it separate
+* [x] Create a tablet and mobile version of the services page from previous projects ([completed](https://macjabeth.github.io/UI-III-Flexbox/great-idea/services.html) in last week's project!)
+* [x] Once you have completed the project with max-width media queries, start over with min-width media queries to get a feel for how a mobile first approach would be like.  I recommend making a copy of all your contents in a new folder named "mobile-first" to keep it separate
